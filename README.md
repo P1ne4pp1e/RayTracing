@@ -1,6 +1,6 @@
-# WeekendRay（周末光追）
+# RayTracing
 
-WeekendRay 是从《Ray Tracing in One Weekend》第一册的最终示例源码提取并整理的独立 C++ 学习项目。光线追踪的核心实现来自上游。
+RayTracing 是从《Ray Tracing in One Weekend》第一册的最终示例源码提取并整理的独立 C++ 学习项目。光线追踪的核心实现来自上游。
 
 ## 来源与许可
 
@@ -30,7 +30,7 @@ WeekendRay 是从《Ray Tracing in One Weekend》第一册的最终示例源码�
 ```powershell
 cmake -S . -B build -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release
 cmake --build build --parallel
-cmd /c '.\build\WeekendRay.exe > build\image.ppm 2> build\render.log'
+cmd /c '.\build\RayTracing.exe > build\image.ppm 2> build\render.log'
 ```
 
 程序将 ASCII PPM（`P3`）写入标准输出，将渲染进度写入标准错误。上面的命令使用 `cmd` 重定向，在 `build/` 中生成 `image.ppm` 和 `render.log`。默认图像为 1200 × 675 像素，每像素 10 个样本，可用支持 PPM 的图像查看器打开。

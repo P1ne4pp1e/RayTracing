@@ -1,11 +1,11 @@
 cmake_minimum_required(VERSION 3.15)
 
-project(WeekendRay LANGUAGES CXX)
+project(RayTracing LANGUAGES CXX)
 
-add_executable(WeekendRay src/main.cc)
-target_include_directories(WeekendRay PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/src")
+add_executable(RayTracing src/main.cc)
+target_include_directories(RayTracing PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/src")
 
-set_target_properties(WeekendRay PROPERTIES
+set_target_properties(RayTracing PROPERTIES
     CXX_STANDARD 11
     CXX_STANDARD_REQUIRED YES
     CXX_EXTENSIONS NO
