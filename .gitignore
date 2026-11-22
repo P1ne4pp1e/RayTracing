@@ -2,6 +2,8 @@
 /build-*/
 /cmake-build-*/
 *.ppm
+/.idea/
+/CMakeUserPresets.json
 
 # 本地 Agent 提示词与配置
 [Aa][Gg][Ee][Nn][Tt].[Mm][Dd]

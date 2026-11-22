@@ -34,3 +34,10 @@ cmd /c '.\build\RayTracing.exe > build\image.ppm 2> build\render.log'
 ```
 
 程序将 ASCII PPM（`P3`）写入标准输出，将渲染进度写入标准错误。上面的命令使用 `cmd` 重定向，在 `build/` 中生成 `image.ppm` 和 `render.log`。默认图像为 1200 × 675 像素，每像素 10 个样本，可用支持 PPM 的图像查看器打开。
+
+## IDE 调试（Windows）
+
+两个 IDE 都从项目根目录的 `CMakeLists.txt` 读取 `RayTracing` 目标。本机使用 MinGW-w64 和 GDB 进行调试。
+
+- **CLion** 打开项目根目录，在 CMake 的 **Debug** 配置里选择含 GDB 的 MinGW 工具链。选择 `RayTracing` 运行配置，在 `src/main.cc` 的 `main()` 函数内设断点，点击 **Debug**。
+- **VS Code** 需要 CMake 3.21 或更新版本，并且同一套 MinGW-w64 的 `g++.exe`、`mingw32-make.exe` 和 `gdb.exe` 可从 `PATH` 找到。打开项目根目录，启用 **CMake Tools** 和 **C/C++** 扩展。若窗口显示受限模式，需信任当前工作区才能构建和调试。首次使用时，在命令面板运行 **CMake: Select Configure Preset** 并选择 **MinGW Debug**。在 `main()` 内设断点，选择 **RayTracing (GDB)** 后按 `F5`，CMake Tools 会先构建可执行目标，输出到 `build/mingw-debug/`。
